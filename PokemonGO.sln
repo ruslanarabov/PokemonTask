@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGO.Infrastructure", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGO.Persistance", "PokemonGO.Persistance\PokemonGO.Persistance.csproj", "{7E7BD180-C4B2-415D-8A17-2E02B4447302}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGO.API", "PokemonGO.API\PokemonGO.API.csproj", "{0F2EDFDF-6E55-46E8-AFBC-BBA56E717B7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGO.API", "PokemonGO.API\PokemonGO.API.csproj", "{0851A3F3-70EA-4A90-90FA-2D650FE07B24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,9 +38,9 @@ Global
 		{7E7BD180-C4B2-415D-8A17-2E02B4447302}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E7BD180-C4B2-415D-8A17-2E02B4447302}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E7BD180-C4B2-415D-8A17-2E02B4447302}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F2EDFDF-6E55-46E8-AFBC-BBA56E717B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F2EDFDF-6E55-46E8-AFBC-BBA56E717B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F2EDFDF-6E55-46E8-AFBC-BBA56E717B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F2EDFDF-6E55-46E8-AFBC-BBA56E717B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0851A3F3-70EA-4A90-90FA-2D650FE07B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0851A3F3-70EA-4A90-90FA-2D650FE07B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0851A3F3-70EA-4A90-90FA-2D650FE07B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0851A3F3-70EA-4A90-90FA-2D650FE07B24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

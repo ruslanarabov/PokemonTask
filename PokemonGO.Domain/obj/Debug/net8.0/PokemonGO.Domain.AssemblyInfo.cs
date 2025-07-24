@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PokemonGO.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87459160f80453cf049d5fc2e609d268b67c4b99")]
 [assembly: System.Reflection.AssemblyProductAttribute("PokemonGO.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PokemonGO.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
