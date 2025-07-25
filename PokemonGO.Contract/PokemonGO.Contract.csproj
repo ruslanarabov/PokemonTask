@@ -10,8 +10,4 @@
       <ProjectReference Include="..\PokemonGO.Domain\PokemonGO.Domain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="DTOs\" />
-    </ItemGroup>
-
 </Project>

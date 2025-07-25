@@ -9,6 +9,7 @@ public static class RepositoryExtension
     public static IServiceCollection AddRepositoryRegistration(this IServiceCollection services)
     {
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddScoped<ITrainerRepository, TrainerRepository>();
         //services.AddScoped<IPokemonRepository, PokemonRepository>();
         return services;
     }

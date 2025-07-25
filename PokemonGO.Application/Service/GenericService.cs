@@ -5,8 +5,9 @@ using PokemonGO.Domain.Repositories;
 
 namespace PokemonGO.Application.Service;
 
-public class GenericService<TVM, TEntity> : IGenericService<TVM, TEntity> 
-    where TVM : class where TEntity : BaseEntity, new()
+public class GenericService<TReadDto, TCreateDto, TUpdateDto, TEntity> 
+    : IGenericService<TReadDto, TCreateDto, TUpdateDto, TEntity>
+    where TEntity : BaseEntity, new()
 {
     protected readonly IGenericRepository<TEntity> _repository;
     protected readonly IMapper _mapper;
@@ -18,63 +19,53 @@ public class GenericService<TVM, TEntity> : IGenericService<TVM, TEntity>
         _repository = repository;
         _unityOfWork = unityOfWork;
     }
-    
-    public async Task<TVM> AddAsync(TVM entity)
-    {
-        if (entity == null)
-            throw new ArgumentNullException(nameof(entity));
 
-        var entityToAdd = _mapper.Map<TEntity>(entity);
-        var addedEntity = await _repository.AddAsync(entityToAdd);
+    public async Task<TReadDto> AddAsync(TCreateDto dto)
+    {
+        if (dto == null) throw new ArgumentNullException(nameof(dto));
+
+        var entity = _mapper.Map<TEntity>(dto);
+        var added = await _repository.AddAsync(entity);
         await _unityOfWork.SaveChangesAsync();
-        
-        return _mapper.Map<TVM>(addedEntity);
-        
+
+        return _mapper.Map<TReadDto>(added);
     }
 
-    public async Task<TVM> GetByIdAsync(int id)
+    public async Task<TReadDto> GetByIdAsync(int id)
     {
-        var data = await _repository.GetByIdAsync(id);
-        if (data == null)
-        {
-            return null;
-        }
-        var result = _mapper.Map<TVM>(data);
-        return result;
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return default;
+
+        return _mapper.Map<TReadDto>(entity);
     }
 
-    public async Task<IEnumerable<TVM>> GetAllAsync()
+    public async Task<IEnumerable<TReadDto>> GetAllAsync()
     {
-        var data = await _repository.GetAllAsync();
-        if (data == null)
-        {
-            return null;
-        }
-        var result = _mapper.Map<IEnumerable<TVM>>(data);
-        return result;
+        var entities = await _repository.GetAllAsync();
+        return _mapper.Map<IEnumerable<TReadDto>>(entities);
     }
-    
+
     public async Task<bool> DeleteAsync(int id)
     {
-        var data = await _repository.GetByIdAsync(id);
-        if (data == null)
-        {
-            return false;
-        }
+        var entity = await _repository.GetByIdAsync(id);
+        if (entity == null) return false;
+
         await _repository.DeleteAsync(id);
         await _unityOfWork.SaveChangesAsync();
+
         return true;
     }
 
-    public async Task<TVM> UpdateAsync(TVM entity)
+    public async Task<TReadDto> UpdateAsync(int id, TUpdateDto dto)
     {
-        if (entity == null)
-            throw new ArgumentNullException(nameof(entity));
+        if (dto == null) throw new ArgumentNullException(nameof(dto));
 
-        var entityToUpdate = _mapper.Map<TEntity>(entity);
-        var updatedEntity = await _repository.UpdateAsync(entityToUpdate);
+        var entityToUpdate = _mapper.Map<TEntity>(dto);
+        entityToUpdate.Id = id;
+
+        var updated = await _repository.UpdateAsync(entityToUpdate);
         await _unityOfWork.SaveChangesAsync();
-        
-        return _mapper.Map<TVM>(updatedEntity);
+
+        return _mapper.Map<TReadDto>(updated);
     }
 }
