@@ -51,12 +51,12 @@ public class PokemonDB : DbContext
             .HasOne(l => l.Winner)
             .WithMany()
             .HasForeignKey(l => l.WinnerId)
-            .OnDelete(DeleteBehavior.NoAction); // ✅
+            .OnDelete(DeleteBehavior.NoAction); 
 
-        // modelBuilder.Entity<Location>()
-        //     .HasOne(l => l.Loser)
-        //     .WithMany()
-        //     .HasForeignKey(l => l.LoserId)
-        //     .OnDelete(DeleteBehavior.Cascade);
+        modelBuilder.Entity<Location>()
+            .HasOne(l => l.Loser)
+            .WithMany()
+            .HasForeignKey(l => l.LoserId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

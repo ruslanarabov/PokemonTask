@@ -10,4 +10,6 @@ public class Location : BaseEntity
     
     public int WinnerId { get; set; }
     public Trainer? Winner { get; set; }
+    public int LoserId { get; set; }
+    public Trainer? Loser { get; set; }
 }
