@@ -1,0 +1,16 @@
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/bin/Debug/net8.0/PokemonGO.Contract.deps.json
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/bin/Debug/net8.0/PokemonGO.Contract.dll
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/bin/Debug/net8.0/PokemonGO.Contract.pdb
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/bin/Debug/net8.0/PokemonGO.Domain.dll
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/bin/Debug/net8.0/PokemonGO.Domain.pdb
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.csproj.AssemblyReference.cache
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.AssemblyInfoInputs.cache
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.AssemblyInfo.cs
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.csproj.CoreCompileInputs.cache
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.sourcelink.json
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/PokemonG.C4634E5E.Up2Date
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.dll
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/refint/PokemonGO.Contract.dll
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.pdb
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/Debug/net8.0/ref/PokemonGO.Contract.dll

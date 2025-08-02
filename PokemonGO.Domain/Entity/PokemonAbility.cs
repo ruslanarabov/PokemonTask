@@ -1,10 +1,10 @@
 namespace PokemonGO.Domain.Entity;
 
-public class PokemonAbility : BaseEntity
+public class PokemonAbility
 {
-    public int PokemonId { get; set; }
-    public Pokemon Pokemon { get; set; }
-
-    public int AbilityId { get; set; }
-    public Ability Ability { get; set; }
+    public int TrainerPokemonId { get; set; }
+    public TrainerPokemon TrainerPokemon { get; set; } = null!;
+    
+    public int BaseAbilityId { get; set; }
+    public BaseAbility BaseAbility { get; set; } = null!;
 }

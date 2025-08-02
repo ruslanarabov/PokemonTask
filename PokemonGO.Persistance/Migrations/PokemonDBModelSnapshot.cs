@@ -22,7 +22,208 @@ namespace PokemonGO.Persistance.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Ability", b =>
+            modelBuilder.Entity("PokemonGO.Domain.Entity.AbilityLevel", b =>
+                {
+                    b.Property<int>("PokemonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BaseAbilityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.HasKey("PokemonId", "BaseAbilityId");
+
+                    b.HasIndex("BaseAbilityId");
+
+                    b.ToTable("AbilityLevel");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.BaseAbility", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Difficulty")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SpeciesId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TrainerPokemonId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SpeciesId");
+
+                    b.HasIndex("TrainerPokemonId");
+
+                    b.ToTable("BaseAbilities");
+
+                    b.HasDiscriminator().HasValue("BaseAbility");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.Gym", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("LeaderTrainerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LocationsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LeaderTrainerId");
+
+                    b.HasIndex("LocationsId");
+
+                    b.ToTable("Gyms");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.Location", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("WinnerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WinnerId");
+
+                    b.ToTable("Locations");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.Pokemon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DefaultAtack")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DefaultDefense")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DefaultHP")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pokemons");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.PokemonAbility", b =>
+                {
+                    b.Property<int>("TrainerPokemonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BaseAbilityId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TrainerPokemonId", "BaseAbilityId");
+
+                    b.HasIndex("BaseAbilityId");
+
+                    b.ToTable("PokemonAssignAbilities");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.Specie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,15 +245,37 @@ namespace PokemonGO.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Abilities");
+                    b.ToTable("Species");
                 });
 
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Badge", b =>
+            modelBuilder.Entity("PokemonGO.Domain.Entity.SpecieEffect", b =>
+                {
+                    b.Property<int>("AttackSpecieId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DefenseSpecieId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MultiplierType")
+                        .HasColumnType("int");
+
+                    b.HasKey("AttackSpecieId", "DefenseSpecieId");
+
+                    b.HasIndex("DefenseSpecieId");
+
+                    b.ToTable("SpecieEffects");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.Trainer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -63,19 +286,83 @@ namespace PokemonGO.Persistance.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Effect")
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LocationId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LocationId1")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NickName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("GymId")
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
+
+                    b.HasIndex("LocationId1");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Trainers");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.TrainerPokemon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CurrentHp")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("GymId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
+                    b.Property<bool>("IsShiny")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NickName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PokemonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PokemonType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TrainerId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
@@ -84,504 +371,6 @@ namespace PokemonGO.Persistance.Migrations
 
                     b.HasIndex("GymId");
 
-                    b.ToTable("Badges");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Battle", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BattleType")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Trainer1Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Trainer2Id")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("WinnerTrainerId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Trainer1Id");
-
-                    b.HasIndex("Trainer2Id");
-
-                    b.HasIndex("WinnerTrainerId");
-
-                    b.ToTable("Battles");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.BattleLog", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ActionDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("BattleId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("RoundNumber")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BattleId");
-
-                    b.ToTable("BattleLogs");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Gym", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("GymLeaderId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RequiredLevel")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GymLeaderId");
-
-                    b.ToTable("Gyms");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Item", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Effect")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ItemType")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Items");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.LegendaryPokemonEncounter", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("EncounterTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsCaught")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PokemonId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PokemonId");
-
-                    b.ToTable("LegendaryPokemonEncounters");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Pokemon", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("EvolutionPokemonId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Experience")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("EvolutionPokemonId");
-
-                    b.ToTable("Pokemons");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.PokemonAbility", b =>
-                {
-                    b.Property<int>("PokemonId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AbilityId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("PokemonId", "AbilityId");
-
-                    b.HasIndex("AbilityId");
-
-                    b.ToTable("PokemonAbilities");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.PokemonCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PokemonCategories");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Tournament", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RequiredBadges")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tournaments");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.TournamentTrainer", b =>
-                {
-                    b.Property<int>("TournamentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TrainerId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsWinner")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("TournamentId", "TrainerId");
-
-                    b.HasIndex("TrainerId");
-
-                    b.ToTable("TournamentTrainers");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Trainer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Experience")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Trainers");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.TrainerBadge", b =>
-                {
-                    b.Property<int>("TrainerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BadgeId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("TrainerId", "BadgeId");
-
-                    b.HasIndex("BadgeId");
-
-                    b.ToTable("TrainerBadges");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.TrainerItem", b =>
-                {
-                    b.Property<int>("TrainerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("TrainerId", "ItemId");
-
-                    b.HasIndex("ItemId");
-
-                    b.ToTable("TrainerItems");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.TrainerPokemon", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("CurrentHP")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Experience")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsFainted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nickname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PokemonId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TrainerId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
                     b.HasIndex("PokemonId");
 
                     b.HasIndex("TrainerId");
@@ -589,171 +378,285 @@ namespace PokemonGO.Persistance.Migrations
                     b.ToTable("TrainerPokemons");
                 });
 
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Badge", b =>
+            modelBuilder.Entity("PokemonGO.Domain.Entity.User", b =>
                 {
-                    b.HasOne("PokemonGO.Domain.Entity.Gym", "Gym")
-                        .WithMany("Badges")
-                        .HasForeignKey("GymId")
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("PokemonSpecie", b =>
+                {
+                    b.Property<int>("PokemonsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SpeciesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PokemonsId", "SpeciesId");
+
+                    b.HasIndex("SpeciesId");
+
+                    b.ToTable("PokemonSpecie");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.ActiveAbility", b =>
+                {
+                    b.HasBaseType("PokemonGO.Domain.Entity.BaseAbility");
+
+                    b.Property<int>("AttackEffective")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CoolDown")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DefenseEffective")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HealthEffective")
+                        .HasColumnType("int");
+
+                    b.HasDiscriminator().HasValue("ActiveAbility");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.PassiveAbility", b =>
+                {
+                    b.HasBaseType("PokemonGO.Domain.Entity.BaseAbility");
+
+                    b.Property<int>("AttackEffective")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DefenseEffective")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HealthEffective")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OpponentAttack")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OpponentDefense")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OpponentHealth")
+                        .HasColumnType("int");
+
+                    b.ToTable("BaseAbilities", t =>
+                        {
+                            t.Property("AttackEffective")
+                                .HasColumnName("PassiveAbility_AttackEffective");
+
+                            t.Property("DefenseEffective")
+                                .HasColumnName("PassiveAbility_DefenseEffective");
+
+                            t.Property("HealthEffective")
+                                .HasColumnName("PassiveAbility_HealthEffective");
+                        });
+
+                    b.HasDiscriminator().HasValue("PassiveAbility");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.StatusAbility", b =>
+                {
+                    b.HasBaseType("PokemonGO.Domain.Entity.BaseAbility");
+
+                    b.Property<bool>("IsAttackEffective")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDefenseEffective")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsHealthEffective")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("StatusAbilityTypes")
+                        .HasColumnType("int");
+
+                    b.HasDiscriminator().HasValue("StatusAbility");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.AbilityLevel", b =>
+                {
+                    b.HasOne("PokemonGO.Domain.Entity.BaseAbility", "BaseAbility")
+                        .WithMany("AbilityLevels")
+                        .HasForeignKey("BaseAbilityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Gym");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Battle", b =>
-                {
-                    b.HasOne("PokemonGO.Domain.Entity.Trainer", "Trainer1")
+                    b.HasOne("PokemonGO.Domain.Entity.Pokemon", "Pokemon")
                         .WithMany()
-                        .HasForeignKey("Trainer1Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("PokemonGO.Domain.Entity.Trainer", "Trainer2")
-                        .WithMany()
-                        .HasForeignKey("Trainer2Id")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("PokemonGO.Domain.Entity.Trainer", "WinnerTrainer")
-                        .WithMany()
-                        .HasForeignKey("WinnerTrainerId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Trainer1");
-
-                    b.Navigation("Trainer2");
-
-                    b.Navigation("WinnerTrainer");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.BattleLog", b =>
-                {
-                    b.HasOne("PokemonGO.Domain.Entity.Battle", "Battle")
-                        .WithMany("BattleLogs")
-                        .HasForeignKey("BattleId")
+                        .HasForeignKey("PokemonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Battle");
+                    b.Navigation("BaseAbility");
+
+                    b.Navigation("Pokemon");
+                });
+
+            modelBuilder.Entity("PokemonGO.Domain.Entity.BaseAbility", b =>
+                {
+                    b.HasOne("PokemonGO.Domain.Entity.Specie", "Species")
+                        .WithMany()
+                        .HasForeignKey("SpeciesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGO.Domain.Entity.TrainerPokemon", null)
+                        .WithMany("Abilities")
+                        .HasForeignKey("TrainerPokemonId");
+
+                    b.Navigation("Species");
                 });
 
             modelBuilder.Entity("PokemonGO.Domain.Entity.Gym", b =>
                 {
-                    b.HasOne("PokemonGO.Domain.Entity.Trainer", "GymLeader")
+                    b.HasOne("PokemonGO.Domain.Entity.Trainer", "LeaderTrainer")
                         .WithMany()
-                        .HasForeignKey("GymLeaderId")
+                        .HasForeignKey("LeaderTrainerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("GymLeader");
+                    b.HasOne("PokemonGO.Domain.Entity.Location", "Locations")
+                        .WithMany("Gyms")
+                        .HasForeignKey("LocationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LeaderTrainer");
+
+                    b.Navigation("Locations");
                 });
 
-            modelBuilder.Entity("PokemonGO.Domain.Entity.LegendaryPokemonEncounter", b =>
+            modelBuilder.Entity("PokemonGO.Domain.Entity.Location", b =>
                 {
-                    b.HasOne("PokemonGO.Domain.Entity.Pokemon", "Pokemon")
+                    b.HasOne("PokemonGO.Domain.Entity.Trainer", "Winner")
                         .WithMany()
-                        .HasForeignKey("PokemonId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("WinnerId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Pokemon");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Pokemon", b =>
-                {
-                    b.HasOne("PokemonGO.Domain.Entity.PokemonCategory", "Category")
-                        .WithMany("Pokemons")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PokemonGO.Domain.Entity.Pokemon", "EvolutionPokemon")
-                        .WithMany()
-                        .HasForeignKey("EvolutionPokemonId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Category");
-
-                    b.Navigation("EvolutionPokemon");
+                    b.Navigation("Winner");
                 });
 
             modelBuilder.Entity("PokemonGO.Domain.Entity.PokemonAbility", b =>
                 {
-                    b.HasOne("PokemonGO.Domain.Entity.Ability", "Ability")
-                        .WithMany("PokemonAbilities")
-                        .HasForeignKey("AbilityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PokemonGO.Domain.Entity.Pokemon", "Pokemon")
-                        .WithMany("PokemonAbilities")
-                        .HasForeignKey("PokemonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ability");
-
-                    b.Navigation("Pokemon");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.TournamentTrainer", b =>
-                {
-                    b.HasOne("PokemonGO.Domain.Entity.Tournament", "Tournament")
-                        .WithMany("Participants")
-                        .HasForeignKey("TournamentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PokemonGO.Domain.Entity.Trainer", "Trainer")
+                    b.HasOne("PokemonGO.Domain.Entity.BaseAbility", "BaseAbility")
                         .WithMany()
-                        .HasForeignKey("TrainerId")
+                        .HasForeignKey("BaseAbilityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Tournament");
+                    b.HasOne("PokemonGO.Domain.Entity.TrainerPokemon", "TrainerPokemon")
+                        .WithMany("PokemonAbilities")
+                        .HasForeignKey("TrainerPokemonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Trainer");
+                    b.Navigation("BaseAbility");
+
+                    b.Navigation("TrainerPokemon");
                 });
 
-            modelBuilder.Entity("PokemonGO.Domain.Entity.TrainerBadge", b =>
+            modelBuilder.Entity("PokemonGO.Domain.Entity.SpecieEffect", b =>
                 {
-                    b.HasOne("PokemonGO.Domain.Entity.Badge", "Badge")
-                        .WithMany("TrainerBadges")
-                        .HasForeignKey("BadgeId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                    b.HasOne("PokemonGO.Domain.Entity.Specie", "AttackSpecie")
+                        .WithMany()
+                        .HasForeignKey("AttackSpecieId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PokemonGO.Domain.Entity.Trainer", "Trainer")
-                        .WithMany("Badges")
-                        .HasForeignKey("TrainerId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                    b.HasOne("PokemonGO.Domain.Entity.Specie", "DefenseSpecie")
+                        .WithMany()
+                        .HasForeignKey("DefenseSpecieId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Badge");
+                    b.Navigation("AttackSpecie");
 
-                    b.Navigation("Trainer");
+                    b.Navigation("DefenseSpecie");
                 });
 
-            modelBuilder.Entity("PokemonGO.Domain.Entity.TrainerItem", b =>
+            modelBuilder.Entity("PokemonGO.Domain.Entity.Trainer", b =>
                 {
-                    b.HasOne("PokemonGO.Domain.Entity.Item", "Item")
-                        .WithMany("TrainerItems")
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("PokemonGO.Domain.Entity.Location", null)
+                        .WithMany("EliteFour")
+                        .HasForeignKey("LocationId");
 
-                    b.HasOne("PokemonGO.Domain.Entity.Trainer", "Trainer")
-                        .WithMany("Items")
-                        .HasForeignKey("TrainerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("PokemonGO.Domain.Entity.Location", null)
+                        .WithMany("Trainers")
+                        .HasForeignKey("LocationId1");
 
-                    b.Navigation("Item");
+                    b.HasOne("PokemonGO.Domain.Entity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
 
-                    b.Navigation("Trainer");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PokemonGO.Domain.Entity.TrainerPokemon", b =>
                 {
+                    b.HasOne("PokemonGO.Domain.Entity.Gym", null)
+                        .WithMany("Guards")
+                        .HasForeignKey("GymId");
+
                     b.HasOne("PokemonGO.Domain.Entity.Pokemon", "Pokemon")
                         .WithMany("TrainerPokemons")
                         .HasForeignKey("PokemonId")
@@ -761,7 +664,7 @@ namespace PokemonGO.Persistance.Migrations
                         .IsRequired();
 
                     b.HasOne("PokemonGO.Domain.Entity.Trainer", "Trainer")
-                        .WithMany("Pokemons")
+                        .WithMany("TrainerPokemons")
                         .HasForeignKey("TrainerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -771,55 +674,55 @@ namespace PokemonGO.Persistance.Migrations
                     b.Navigation("Trainer");
                 });
 
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Ability", b =>
+            modelBuilder.Entity("PokemonSpecie", b =>
                 {
-                    b.Navigation("PokemonAbilities");
+                    b.HasOne("PokemonGO.Domain.Entity.Pokemon", null)
+                        .WithMany()
+                        .HasForeignKey("PokemonsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGO.Domain.Entity.Specie", null)
+                        .WithMany()
+                        .HasForeignKey("SpeciesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Badge", b =>
+            modelBuilder.Entity("PokemonGO.Domain.Entity.BaseAbility", b =>
                 {
-                    b.Navigation("TrainerBadges");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Battle", b =>
-                {
-                    b.Navigation("BattleLogs");
+                    b.Navigation("AbilityLevels");
                 });
 
             modelBuilder.Entity("PokemonGO.Domain.Entity.Gym", b =>
                 {
-                    b.Navigation("Badges");
+                    b.Navigation("Guards");
                 });
 
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Item", b =>
+            modelBuilder.Entity("PokemonGO.Domain.Entity.Location", b =>
                 {
-                    b.Navigation("TrainerItems");
+                    b.Navigation("EliteFour");
+
+                    b.Navigation("Gyms");
+
+                    b.Navigation("Trainers");
                 });
 
             modelBuilder.Entity("PokemonGO.Domain.Entity.Pokemon", b =>
                 {
-                    b.Navigation("PokemonAbilities");
-
                     b.Navigation("TrainerPokemons");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.PokemonCategory", b =>
-                {
-                    b.Navigation("Pokemons");
-                });
-
-            modelBuilder.Entity("PokemonGO.Domain.Entity.Tournament", b =>
-                {
-                    b.Navigation("Participants");
                 });
 
             modelBuilder.Entity("PokemonGO.Domain.Entity.Trainer", b =>
                 {
-                    b.Navigation("Badges");
+                    b.Navigation("TrainerPokemons");
+                });
 
-                    b.Navigation("Items");
+            modelBuilder.Entity("PokemonGO.Domain.Entity.TrainerPokemon", b =>
+                {
+                    b.Navigation("Abilities");
 
-                    b.Navigation("Pokemons");
+                    b.Navigation("PokemonAbilities");
                 });
 #pragma warning restore 612, 618
         }

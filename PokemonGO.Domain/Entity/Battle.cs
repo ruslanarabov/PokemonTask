@@ -1,23 +1,14 @@
 using PokemonGO.Domain.Enums;
-
 namespace PokemonGO.Domain.Entity;
-
 public class Battle : BaseEntity
 {
-    public string Name { get; set; }
-    
-    public int Trainer1Id { get; set; }
-    public Trainer Trainer1 { get; set; }
-
-    public int? Trainer2Id { get; set; }
-    public Trainer Trainer2 { get; set; }
-
-    public int? WinnerTrainerId { get; set; }
-    public Trainer WinnerTrainer { get; set; }
-
-    public BattleType BattleType { get; set; }
-    public DateTime Date { get; set; }
-
-    public ICollection<BattleLog> BattleLogs { get; set; }
-    
+    // public BattleType BattleType { get; set; }
+    // public string? TrainerId { get; set; }
+    // public Trainer? Trainer { get; set; }
+    // public string? OpponentId { get; set; }
+    // public Trainer? Opponent { get; set; }
+    // public ICollection<Pokemon> Pokemons { get; set; } = [];
+    // public ICollection<Pokemon> OpponentPokemons { get; set; } = [];
+    // public bool IsCompleted { get; set; } = false;
+    // public int LoserId { get; set; } // 0 for draw,
 }

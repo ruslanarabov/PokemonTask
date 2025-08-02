@@ -1,13 +1,10 @@
 namespace PokemonGO.Domain.Entity;
 
 public class Badge : BaseEntity
-{
+{   
     public string Name { get; set; }
-    public string Effect { get; set; }
-
-    public int GymId { get; set; }
-    public Gym Gym { get; set; }
-    // Navigation properties
-    public ICollection<TrainerBadge> TrainerBadges { get; set; }
+    public string Description { get; set; }
+    public int TrainerId { get; set; }
+    public Trainer Trainer { get; set; } = null!;
     
 }

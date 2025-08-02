@@ -1,0 +1,12 @@
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/bin/Debug/net8.0/PokemonGO.Infrastructure.deps.json
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/bin/Debug/net8.0/PokemonGO.Infrastructure.dll
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/bin/Debug/net8.0/PokemonGO.Infrastructure.pdb
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.AssemblyInfoInputs.cache
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.AssemblyInfo.cs
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.sourcelink.json
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.dll
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/obj/Debug/net8.0/refint/PokemonGO.Infrastructure.dll
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.pdb
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Infrastructure/obj/Debug/net8.0/ref/PokemonGO.Infrastructure.dll

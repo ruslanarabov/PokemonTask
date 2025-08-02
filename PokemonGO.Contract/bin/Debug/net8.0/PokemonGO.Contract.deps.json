@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PokemonGO.Contract/1.0.0": {
+        "dependencies": {
+          "PokemonGO.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PokemonGO.Contract.dll": {}
+        }
+      },
+      "PokemonGO.Domain/1.0.0": {
+        "runtime": {
+          "PokemonGO.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PokemonGO.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PokemonGO.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

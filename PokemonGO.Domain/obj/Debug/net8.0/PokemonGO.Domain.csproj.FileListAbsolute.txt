@@ -10,3 +10,4 @@
 /Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Domain/obj/Debug/net8.0/refint/PokemonGO.Domain.dll
 /Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.pdb
 /Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Domain/obj/Debug/net8.0/ref/PokemonGO.Domain.dll
+/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.csproj.AssemblyReference.cache

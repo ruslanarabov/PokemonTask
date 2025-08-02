@@ -49,10 +49,8 @@ public class GenericService<TReadDto, TCreateDto, TUpdateDto, TEntity>
     {
         var entity = await _repository.GetByIdAsync(id);
         if (entity == null) return false;
-
         await _repository.DeleteAsync(id);
         await _unityOfWork.SaveChangesAsync();
-
         return true;
     }
 
