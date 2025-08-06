@@ -2,8 +2,7 @@ namespace PokemonGO.Domain.Enums;
 
 public enum BattleType
 {
-    TrainerVsTrainer,
-    TrainerVsWild,
-    GymBattle,
-    Tournament
+    TrainerVsTrainer = 0,
+    TrainerVsNpc = 1,
+    TrainerVsGymLeader = 2,
 }

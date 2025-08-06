@@ -7,7 +7,7 @@ public class Gym : BaseEntity
     public string Location { get; set; } = string.Empty;
 
     public Trainer LeaderTrainer { get; set; } = null!;
-    public ICollection<TrainerPokemon> Guards { get; set; } = [];
     public Location Locations { get; set; } = null!;
+    public ICollection<TrainerPokemon> Guards { get; set; } = [];
     
 }

@@ -26,6 +26,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Application/PokemonGO.Application.csproj": {
+                "projectPath": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Application/PokemonGO.Application.csproj"
+              },
               "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Persistance/PokemonGO.Persistance.csproj": {
                 "projectPath": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Persistance/PokemonGO.Persistance.csproj"
               }
@@ -77,6 +80,140 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Application/PokemonGO.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Application/PokemonGO.Application.csproj",
+        "projectName": "PokemonGO.Application",
+        "projectPath": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Application/PokemonGO.Application.csproj",
+        "packagesPath": "/Users/macbook/.nuget/packages/",
+        "outputPath": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/macbook/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/PokemonGO.Contract.csproj": {
+                "projectPath": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/PokemonGO.Contract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/PokemonGO.Contract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/PokemonGO.Contract.csproj",
+        "projectName": "PokemonGO.Contract",
+        "projectPath": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/PokemonGO.Contract.csproj",
+        "packagesPath": "/Users/macbook/.nuget/packages/",
+        "outputPath": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Contract/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/macbook/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Domain/PokemonGO.Domain.csproj": {
+                "projectPath": "/Users/macbook/Desktop/Pokemon/PokemonGO/PokemonGO.Domain/PokemonGO.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

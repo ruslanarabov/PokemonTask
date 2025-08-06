@@ -8,7 +8,11 @@ public class PokemonDB : DbContext
     public PokemonDB(DbContextOptions<PokemonDB> options) : base(options) { }
 
     public DbSet<ActiveAbility> ActiveAbilities { get; set; }
+    public DbSet<AbilityLevel> AbilityLevels { get; set; }
     public DbSet<BaseAbility> BaseAbilities { get; set; }
+    public DbSet<Battle> Battles { get; set; }
+    public DbSet<BattleTurn> BattleTurns { get; set; }
+    public DbSet<Badge> Badges { get; set; }
     public DbSet<PassiveAbility> PassiveAbilities { get; set; }
     public DbSet<Pokemon> Pokemons { get; set; }
     public DbSet<PokemonAbility> PokemonAssignAbilities { get; set; }
@@ -51,12 +55,45 @@ public class PokemonDB : DbContext
             .HasOne(l => l.Winner)
             .WithMany()
             .HasForeignKey(l => l.WinnerId)
-            .OnDelete(DeleteBehavior.NoAction); 
+            .OnDelete(DeleteBehavior.Restrict); 
 
         modelBuilder.Entity<Location>()
             .HasOne(l => l.Loser)
             .WithMany()
             .HasForeignKey(l => l.LoserId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        modelBuilder.Entity<Badge>()
+            .HasOne(b => b.Trainer)
+            .WithMany()
+            .HasForeignKey(b => b.TrainerId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        modelBuilder.Entity<Battle>()
+            .HasOne(b => b.Trainer)
+            .WithMany()
+            .HasForeignKey(b => b.TrainerId)
+            .OnDelete(DeleteBehavior.Restrict); 
+
+        
+        modelBuilder.Entity<Battle>()
+            .HasOne(b => b.Opponent)
+            .WithMany()
+            .HasForeignKey(b => b.OpponentId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        modelBuilder.Entity<BattleTurn>()
+            .HasOne(bt => bt.DefenderTrainerPokemon)
+            .WithMany()
+            .HasForeignKey(bt => bt.DefenderTrainerPokemonId)
+            .OnDelete(DeleteBehavior.Restrict); 
+
+        modelBuilder.Entity<BattleTurn>()
+            .HasOne(bt => bt.AttackerTrainerPokemon)
+            .WithMany()
+            .HasForeignKey(bt => bt.AttackerTrainerPokemonId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        
     }
 }

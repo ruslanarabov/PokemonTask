@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\PokemonGO.Application\PokemonGO.Application.csproj" />
       <ProjectReference Include="..\PokemonGO.Persistance\PokemonGO.Persistance.csproj" />
     </ItemGroup>
 

@@ -11,17 +11,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab264af7-c1d4-4661-9b99-b1442f9010fd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PokemonGO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PokemonGO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Location.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Location.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/PokemonGO.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/PokemonGO.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/obj/Debug/net8.0/PokemonGO.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/obj/Debug/net8.0/PokemonGO.API.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/obj/Debug/net8.0/PokemonGO.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/obj/Debug/net8.0/PokemonGO.API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/obj/Debug/net8.0/PokemonGO.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/obj/Debug/net8.0/PokemonGO.API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/obj/Debug/net8.0/PokemonGO.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/obj/Debug/net8.0/PokemonGO.API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/obj/PokemonGO.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/obj/PokemonGO.API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.API/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Application/obj/Debug/net8.0/PokemonGO.Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Application/obj/Debug/net8.0/PokemonGO.Application.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Application/obj/Debug/net8.0/PokemonGO.Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Application/obj/Debug/net8.0/PokemonGO.Application.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Application/obj/Debug/net8.0/PokemonGO.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Application/obj/Debug/net8.0/PokemonGO.Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Contract/obj/Debug/net8.0/PokemonGO.Contract.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Badge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Badge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Battle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Battle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Gym.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Gym.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Trainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/Entity/Trainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/Entity/TrainerPokemon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/Entity/TrainerPokemon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/Entity/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/Entity/AppUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/Enums/BattleType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/Enums/BattleType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/bin/Debug/net8.0/PokemonGO.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/bin/Debug/net8.0/PokemonGO.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/bin/Debug/net8.0/PokemonGO.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/bin/Debug/net8.0/PokemonGO.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/PokemonGO.Domain.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/ref/PokemonGO.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/ref/PokemonGO.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/refint/PokemonGO.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Domain/obj/Debug/net8.0/refint/PokemonGO.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Infrastructure/obj/Debug/net8.0/PokemonGO.Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/Data/PokemonDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/Data/PokemonDB.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/bin/Debug/net8.0/PokemonGO.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/bin/Debug/net8.0/PokemonGO.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/bin/Debug/net8.0/PokemonGO.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/bin/Debug/net8.0/PokemonGO.Domain.pdb" afterDir="false" />
@@ -30,6 +57,7 @@
       <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PokemonGO.Persistance/obj/Debug/net8.0/PokemonGO.Persistance.sourcelink.json" afterDir="false" />
@@ -176,6 +204,9 @@
       <workItem from="1754078960124" duration="363000" />
       <workItem from="1754145464723" duration="2099000" />
       <workItem from="1754162611631" duration="2817000" />
+      <workItem from="1754219064670" duration="3406000" />
+      <workItem from="1754225525146" duration="1672000" />
+      <workItem from="1754421627135" duration="4946000" />
     </task>
     <servers />
   </component>
